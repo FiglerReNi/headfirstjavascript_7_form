@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bannerocity - Personalized Online Sky Banners</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="bannerocity.css">
+    <script src="bannerocity.js"></script>
+</head>
+<body>
+<div class="container">
+    <br>
+    <div align="center">
+        <img src="logo.png" height="63" width="441"/>
+    </div>
+    <br>
+    <fieldset class="border border-dark p-4">
+        <form action="bannerocity.php" method="post">
+            <div class='row'>
+                <label class="col-5 col-sm-5">Enter the banner message: </label>
+                <input class="col-4 col-sm-4, border border-info" type="text" name="message" id="message" size="32"
+                       onblur="validateLength(1, 32, this)" required/>
+                <div class="col-3 col-sm-3 text-danger"></div>
+                <!--                <div class="col-3 col-sm-3 text-danger" style="visibility: hidden" >Please enter a value! </div>-->
+                <div class='w-100'></div>
+                <label class="col-5 col-sm-5">Enter ZIP code of the location: </label>
+                <!--                <input class="col-4 col-sm-4, border border-info" type="text" name="zip" id="zip" onclick="showIt(this.form)"required/>-->
+                <!--                <input class="col-4 col-sm-4, border border-info" type="text" name="zip" id="zip" onclick="showIt()"required/>-->
+                <input class="col-4 col-sm-4, border border-info" type="text" name="zip" id="zip"
+                       onblur="validateZip(this)" required/>
+                <div class="col-3 col-sm-3 text-danger"></div>
+                <div class='w-100'></div>
+                <label class="col-5 col-sm-5">Enter the date for the message the be shown: </label>
+                <input class="col-4 col-sm-4, border border-info" type="datetime-local" name="date" id="date"
+                       onblur="validateNonEmpty(this)" required/>
+                <div class="col-3 col-sm-3 text-danger"></div>
+                <div class='w-100'></div>
+                <label class="col-5 col-sm-5">Enter your name: </label>
+                <input class="col-4 col-sm-4, border border-info" type="text" name="name" id="name"
+                       onblur="validateNonEmpty(this)" required/>
+                <div class="col-3 col-sm-3 text-danger"></div>
+                <div class='w-100'></div>
+                <label class="col-5 col-sm-5">Enter your phone number: </label>
+                <input class="col-4 col-sm-4, border border-info" type="tel" name="phone" id="phone" placeholder="00-000-0000"
+                       onblur="validatePhone(this)" required/>
+                <div class="col-3 col-sm-3 text-danger"></div>
+                <div class='w-100'></div>
+                <label class="col-5 col-sm-5">Enter your email address: </label>
+                <input class="col-4 col-sm-4, border border-info" type="email" name="email" id="email" placeholder="pelda@test.com"
+                       onblur="validateEmail(this)" required/>
+                <div class="col-3 col-sm-3 text-danger"></div>
+                <div class='w-100'></div>
+            </div>
+            </br>
+            <div>
+                <label class="col-5 col-sm-5"></label>
+                <button class="btn btn-info" name="submit" onclick="return placeOrder(this.form)">Order Banner</button>
+            </div>
+        </form>
+    </fieldset>
+</div>
+</body>
+</html>
